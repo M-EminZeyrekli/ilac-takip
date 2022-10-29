@@ -1,4 +1,4 @@
-package com.medicinetracking;
+package com.medicinetracking.api;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

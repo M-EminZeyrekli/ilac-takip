@@ -20,7 +20,7 @@ import com.medicinetracking.api.services.Abstract.PatientService;
 import lombok.RequiredArgsConstructor;
 
 @RestController
-@RequestMapping("api/patient")
+@RequestMapping("api/patients")
 @CrossOrigin
 @RequiredArgsConstructor
 public class PatientController {

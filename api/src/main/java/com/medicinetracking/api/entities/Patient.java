@@ -38,7 +38,7 @@ public class Patient {
     private double height;
 
     @Column(name = "phone_number")
-    private int phoneNumber;
+    private String phoneNumber;
     
     @Column(name = "gender")
     private String gender;

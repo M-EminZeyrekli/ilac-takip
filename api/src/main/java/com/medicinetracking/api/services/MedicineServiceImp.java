@@ -1,4 +1,4 @@
-package com.medicinetracking.services;
+package com.medicinetracking.api.services;
 
 import java.util.List;
 
@@ -6,7 +6,7 @@ import org.springframework.stereotype.Service;
 
 import com.medicinetracking.api.entities.Medicine;
 import com.medicinetracking.api.repositories.MedicineRepository;
-import com.medicinetracking.services.Abstract.MedicineService;
+import com.medicinetracking.api.services.Abstract.MedicineService;
 
 import lombok.RequiredArgsConstructor;
 

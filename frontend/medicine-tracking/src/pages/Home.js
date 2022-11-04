@@ -3,6 +3,7 @@ import { styled } from "@mui/material/styles";
 import Box from "@mui/material/Box";
 import ButtonBase from "@mui/material/ButtonBase";
 import Typography from "@mui/material/Typography";
+import { useNavigate } from "react-router-dom";
 
 const images = [
   {
@@ -86,7 +87,8 @@ const ImageMarked = styled("span")(({ theme }) => ({
   transition: theme.transitions.create("opacity")
 }));
 
-export default function ButtonBases() {
+export default function Home() {
+  const navigate = useNavigate();
   return (
     <Box
       sx={{ display: "flex", flexWrap: "wrap", minWidth: 300, width: "100%" }}
@@ -97,6 +99,18 @@ export default function ButtonBases() {
           key={image.title}
           style={{
             width: image.width
+          }}
+          onClick={() => {
+            //DUZENLENECEKKKKKKKKK
+            if (image === images[0]) {
+              navigate("/admin/medicines/list");
+            }
+            if (image === images[1]) {
+              navigate("/");
+            }
+            if (image === images[2]) {
+              navigate("/");
+            }
           }}
         >
           <ImageSrc style={{ backgroundImage: `url(${image.url})` }} />
@@ -122,26 +136,3 @@ export default function ButtonBases() {
     </Box>
   );
 }
-
-// import * as React from 'react';
-// import {Container, Button, Fab, Stack, TextField, Typography } from "@mui/material";
-
-// export default function Home() {
-//   return (
-// <Container>
-//       <Stack
-
-//         alignSelf='center'
-//         alignItems='center'
-//         sx={{ minWidth: "650px" }}
-//         spacing={30}
-//         direction="row"
-//         padding={30}
-//       >
-//         <Button >Admin</Button>
-//         <Button >Doctor</Button>
-//         <Button >Patient</Button>
-//       </Stack>
-//       </Container>
-//   );
-// }

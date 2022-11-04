@@ -27,7 +27,7 @@ public class MedicineController {
     private final MedicineService medicineService;
 
     @GetMapping
-    public ResponseEntity<?> getAllMedicine() {
+    public ResponseEntity<?> getAllMedicines() {
         List<Medicine> list = medicineService.getAllMedicine();
         return new ResponseEntity<>(list, HttpStatus.OK);
     }

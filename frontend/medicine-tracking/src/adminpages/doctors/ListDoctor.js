@@ -56,13 +56,12 @@ import {
                     <TableCell align="left">{doctor.id}</TableCell>
                     <TableCell>
                       <Avatar
-                      // src={`images/${medicine.id}.jpg`}
-                      // alt={`${medicine.firstName} ${medicine.lastName}`}
+                      src={`images/${doctor.id}.jpg`}
+                      alt={`${doctor.firstName} ${doctor.lastName}`}
                       >
                         <ImageIcon />
                       </Avatar>
                     </TableCell>
-                    <TableCell align="left">{doctor.id}</TableCell>
                     <TableCell align="left">{doctor.firstName}</TableCell>
                     <TableCell align="left">{doctor.lastName}</TableCell>
                     <TableCell align="center">

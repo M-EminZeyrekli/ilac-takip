@@ -1,7 +1,5 @@
-import React from 'react'
+import React from "react";
 
 export default function AddDoctor() {
-  return (
-    <div>AddDoctor</div>
-  )
+  return <div>AddDoctor</div>;
 }

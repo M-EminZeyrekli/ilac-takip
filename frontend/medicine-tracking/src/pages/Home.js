@@ -4,6 +4,7 @@ import Box from "@mui/material/Box";
 import ButtonBase from "@mui/material/ButtonBase";
 import Typography from "@mui/material/Typography";
 import { useNavigate } from "react-router-dom";
+import { Paper } from "@mui/material";
 
 const images = [
   {
@@ -87,11 +88,26 @@ const ImageMarked = styled("span")(({ theme }) => ({
   transition: theme.transitions.create("opacity")
 }));
 
+// const styles = {
+//   paperContainer: {
+//     height: 700,
+//     backgroundImage: `url(${"./background.jpg"})`
+//   }
+// };
+
 export default function Home() {
   const navigate = useNavigate();
   return (
+    // <Paper style={styles.paperContainer}>
     <Box
-      sx={{ display: "flex", flexWrap: "wrap", minWidth: 300, width: "100%" }}
+      sx={{
+        display: "flex",
+        flexWrap: "wrap",
+        minWidth: 300,
+        width: "100%",
+        mt: "40px",
+        backgroundImage: `url(${"./background.jpg"})`
+      }}
     >
       {images.map((image) => (
         <ImageButton
@@ -101,15 +117,14 @@ export default function Home() {
             width: image.width
           }}
           onClick={() => {
-            //DUZENLENECEKKKKKKKKK
             if (image === images[0]) {
-              navigate("/admin/medicines/list");
+              navigate("/admin");
             }
             if (image === images[1]) {
-              navigate("/");
+              navigate("/doctor");
             }
             if (image === images[2]) {
-              navigate("/");
+              navigate("/patient");
             }
           }}
         >
@@ -134,5 +149,6 @@ export default function Home() {
         </ImageButton>
       ))}
     </Box>
+    // </Paper>
   );
 }

@@ -7,9 +7,9 @@ import {
   TableCell,
   TableContainer,
   TableHead,
-  TableRow,
+  TableRow
 } from "@mui/material";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import List from "@mui/material/List";
 import ListItem from "@mui/material/ListItem";
 import ListItemText from "@mui/material/ListItemText";
@@ -21,12 +21,13 @@ import BeachAccessIcon from "@mui/icons-material/BeachAccess";
 import Paper from "@mui/material/Paper";
 import { Stack } from "@mui/system";
 import MedicineService from "../../services/MedicineService";
+import SimpleFab from "../../components/SimpleFab";
 
-
-export default function ListMedicine({medicines, setmedicines}) {
+export default function ListMedicine({ medicines, setmedicines }) {
   const medicineService = new MedicineService();
-  medicineService.getAllMedicines().then((resp) => setmedicines(resp.data));
-
+  useEffect(() => {
+    medicineService.getAllMedicines().then((resp) => setmedicines(resp.data));
+  }, []);
 
   const handleRemove = (id) => {
     console.log(id);
@@ -38,14 +39,14 @@ export default function ListMedicine({medicines, setmedicines}) {
   return (
     <>
       <Stack>
-        <TableContainer sx={{ m: 2, p: 2 }} component={Paper}>
+        <TableContainer sx={{ m: 1, p: 1 }} component={Paper}>
           <Table sx={{ minWidth: 650 }} aria-label="simple table">
             <TableHead>
               <TableRow>
                 <TableCell align="left">ID</TableCell>
                 <TableCell></TableCell>
-                <TableCell align="left">Firstname</TableCell>
-                <TableCell align="left">Lastname</TableCell>
+                <TableCell align="left">Medicine name</TableCell>
+                <TableCell align="left">Medicine type</TableCell>
                 <TableCell align="center"> </TableCell>
               </TableRow>
             </TableHead>
@@ -58,13 +59,12 @@ export default function ListMedicine({medicines, setmedicines}) {
                   <TableCell align="left">{medicine.id}</TableCell>
                   <TableCell>
                     <Avatar
-                      // src={`images/${medicine.id}.jpg`}
-                      // alt={`${medicine.firstName} ${medicine.lastName}`}
+                    src={`/medicines/${medicine.id}.jpg`}
+                   // alt={`${medicine.firstName} ${medicine.lastName}`}
                     >
                       <ImageIcon />
                     </Avatar>
                   </TableCell>
-                  <TableCell align="left">{medicine.id}</TableCell>
                   <TableCell align="left">{medicine.name}</TableCell>
                   <TableCell align="left">{medicine.medicineType}</TableCell>
                   <TableCell align="center">
@@ -80,6 +80,7 @@ export default function ListMedicine({medicines, setmedicines}) {
             </TableBody>
           </Table>
         </TableContainer>
+        <SimpleFab url="/admin/medicines/add" />
       </Stack>
     </>
   );

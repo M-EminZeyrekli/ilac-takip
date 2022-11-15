@@ -60,7 +60,7 @@ export default function ListMedicine({ medicines, setmedicines }) {
                   <TableCell>
                     <Avatar
                     src={`/medicines/${medicine.id}.jpg`}
-                   // alt={`${medicine.firstName} ${medicine.lastName}`}
+                    alt={`${medicine.firstName} ${medicine.lastName}`}
                     >
                       <ImageIcon />
                     </Avatar>

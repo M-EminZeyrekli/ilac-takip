@@ -24,7 +24,7 @@ function App() {
           <Route path="/admin/doctors/list" element={<ListDoctor doctors={doctors} setdoctors={setdoctors} />} />
           <Route path="/admin/patients/list" element={<ListPatient patients={patients} setpatients={setpatients} />} />
           <Route path="/admin" element={<Admin />} />
-          <Route path="/doctor/" element={<Doctor />} />
+          <Route path="/doctor/" element={<Doctor doctors={doctors} setdoctors={setdoctors} />} />
           <Route path="/" element={<Home />} />
         </Routes>
       </BrowserRouter>

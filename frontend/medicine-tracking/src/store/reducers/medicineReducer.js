@@ -1,4 +1,4 @@
-import { categories, category } from "../initialValues/categoryItems";
+import { medicines, medicine } from "../initialValues/medicineItems";
 import {
   DELETE_ONE_MEDICINE,
   GET_ALL_MEDICINES,

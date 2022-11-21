@@ -1,10 +1,8 @@
 import { combineReducers } from "redux";
-import settingReducer from "./reducers/settingReducer";
-import categoryReducer from "./reducers/categoryReducer";
+import medicineReducer from "./reducers/medicineReducer";
 
 const rootReducer = combineReducers({
-    setting: settingReducer,
-    category : categoryReducer
+    medicine : medicineReducer
 });
 
 export default rootReducer;

@@ -3,8 +3,8 @@ import { useSelector, useDispatch } from "react-redux";
 import { Button, Grid, Box, Stack, TextField, Container } from "@mui/material";
 import React from "react";
 import { useNavigate } from "react-router-dom";
-import { postOneMedicine } from "../../store/actions/medicineActions";
 import SimpleFab from "../../components/SimpleFab";
+import { postOneDoctor } from "../../store/actions/doctorActions";
 
 export default function AddDoctor() {
   const doctorDispatch = useDispatch();

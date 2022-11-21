@@ -1,6 +1,6 @@
 import "./App.css";
 import AddMedicine from "./adminpages/medicines/AddMedicine";
-import AddDoctor from "./adminpages/doctors/ListDoctor"
+import AddDoctor from "./adminpages/doctors/AddDoctor"
 import Home from "./pages/Home";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import ListMedicine from "./adminpages/medicines/ListMedicine";
@@ -22,6 +22,7 @@ function App() {
           <Route path="/admin/medicines/list" element={<ListMedicine medicines={medicines} setmedicines={setmedicines}/>} />
           <Route path="/admin/medicines/add" element={<AddMedicine />} />
           <Route path="/admin/doctors/list" element={<ListDoctor doctors={doctors} setdoctors={setdoctors} />} />
+          <Route path="/admin/doctors/add" element={<AddDoctor  />} />
           <Route path="/admin/patients/list" element={<ListPatient patients={patients} setpatients={setpatients} />} />
           <Route path="/admin" element={<Admin />} />
           <Route path="/doctor/" element={<Doctor doctors={doctors} setdoctors={setdoctors} />} />

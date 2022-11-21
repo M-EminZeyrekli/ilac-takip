@@ -1,47 +1,84 @@
-import React, { useContext, useState } from "react";
-import AppContext from "../../context/AppContext";
-import AuthorService from "../../services/AuthorService";
-import { Button, Container, Fab, Stack, TextField, Typography } from "@mui/material";
+import { useState } from "react";
+import { useSelector, useDispatch } from "react-redux";
+import { Button, Grid, Box, Stack, TextField, Container } from "@mui/material";
+import React from "react";
 import { useNavigate } from "react-router-dom";
-import ArrowBackIcon from "@mui/icons-material/ArrowBack";
-import SimpleFab from "../../components/fab/SimpleFab";
+import SimpleFab from "../../components/SimpleFab";
+import { postOneDoctor } from "../../store/actions/doctorActions";
+import { postOnePatient } from "../../store/actions/patientActions";
 
 export default function AddPatient() {
+  const patientDispatch = useDispatch();
+  const navigate = useNavigate();
+
+  const [form, setForm] = useState({
+    firstName: "",
+    lastName: "",
+    age: "",
+    height: "",
+    weight: "",
+    phoneNumber: "",
+    gender: ""
+  });
+
+  const handleChange = (e) => {
+    setForm({
+      ...form,
+      [e.target.name]: e.target.value
+    });
+  };
+
+  const handleClick = () => {
+    patientDispatch(postOnePatient(form));
+    navigate("/admin/patients/list");
+  };
+
   return (
-    <Container maxWidth='md'>
-      <Stack spacing={3}
-      >
-        <Typography align='center' gutterBottom variant='h5'>
-          Add Patient
-        </Typography>
+    <Container maxWidth="md">
+      <Box sx={{ m: 3 }}>
+        <Stack spacing={3}>
+          <TextField
+            name="firstName"
+            label="First Name"
+            onChange={handleChange}
+          ></TextField>
 
-        <TextField
-          color='primary'
-          label='First Name'
-          name='firstName'
-          placeholder='firstname'
-          value={form.firstName}
-          onChange={(e) => handleChange(e)}
-        />
+          <TextField
+            name="lastName"
+            label="Last Name"
+            onChange={handleChange}
+          ></TextField>
 
-        <TextField
-          name='lastName'
-          label='Last Name'
-          placeholder='lastname'
-          value={form.lastName}
-          onChange={handleChange}
-        />
-        <TextField
-          name='email'
-          label='Email'
-          placeholder='email'
-          value={form.email}
-          onChange={handleChange}
-        />
-        <Button variant="contained" onClick={handleClick}>Add</Button>
-      </Stack>
+          <TextField
+            name="height"
+            label="Height"
+            onChange={handleChange}
+          ></TextField>
 
-      <SimpleFab url="/admin/authors/list"/>
-      </Container>
-  )
+          <TextField
+            name="weight"
+            label="Weight"
+            onChange={handleChange}
+          ></TextField>
+
+          <TextField
+            name="phoneNumber"
+            label="Phone Number"
+            onChange={handleChange}
+          ></TextField>
+          <TextField name="age" label="Age" onChange={handleChange}></TextField>
+          <TextField
+            name="gender"
+            label="Gender"
+            onChange={handleChange}
+          ></TextField>
+
+          <Button color="primary" onClick={handleClick} variant="contained">
+            Add
+          </Button>
+        </Stack>
+        <SimpleFab url="/admin/patients/list" />
+      </Box>
+    </Container>
+  );
 }

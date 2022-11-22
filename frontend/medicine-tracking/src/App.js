@@ -42,7 +42,7 @@ function App() {
           <Route path="/admin" element={<Admin />} />
           <Route
             path="/doctor/"
-            element={<Doctor doctors={doctors} setdoctors={setdoctors} />}
+            element={<Doctor doctors={doctors}  />}
           />
           <Route path="/" element={<Home />} />
         </Routes>

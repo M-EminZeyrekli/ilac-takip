@@ -8,33 +8,18 @@ import Typography from "@mui/material/Typography";
 import DoctorService from "../services/DoctorService";
 import { useEffect } from "react";
 import { useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { getOneDoctor } from "../store/actions/doctorActions";
+import DoctorCardList from "../components/doctor/DoctorCardList";
 
-const bull = (
-  <Box
-    component="span"
-    sx={{ display: "inline-block", mx: "2px", transform: "scale(0.8)" }}
-  >
-    •
-  </Box>
-);
 
-export default function Doctor({ doctors, setdoctors }) {
-  const doctorService = new DoctorService();
-  useEffect(() => {
-    doctorService.getOneDoctor(3).then((resp) => setdoctors(resp.data));
-  }, []);
+export default function Doctor({doctors}) {
+
+
   return (
-    <Card sx={{ minWidth: 275 }}>
-      <CardContent>
-        {doctors.map((doctor) => (
-          <Typography sx={{ fontSize: 14 }} color="text.secondary" gutterBottom>
-            {doctors.firstName}
-          </Typography>
-        ))}
-      </CardContent>
-      <CardActions>
-        <Button size="small">Learn More</Button>
-      </CardActions>
-    </Card>
+    <div>
+      <DoctorCardList />
+    </div>
+   
   );
 }

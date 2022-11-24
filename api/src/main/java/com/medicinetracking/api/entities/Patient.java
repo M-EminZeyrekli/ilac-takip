@@ -1,9 +1,14 @@
 package com.medicinetracking.api.entities;
 
+import java.util.Set;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
 import javax.persistence.Table;
 
 import lombok.AllArgsConstructor;
@@ -39,9 +44,11 @@ public class Patient {
 
     @Column(name = "phone_number")
     private String phoneNumber;
-    
+
     @Column(name = "gender")
     private String gender;
 
-    
+    @ManyToMany
+    @JoinTable(name = "patientmedicines", joinColumns = @JoinColumn(name = "patient_id"), inverseJoinColumns = @JoinColumn(name = "medicine_id"))
+    private Set<Medicine> patientMedicines;
 }

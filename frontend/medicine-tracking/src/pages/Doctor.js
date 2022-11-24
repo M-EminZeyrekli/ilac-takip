@@ -9,17 +9,23 @@ import DoctorService from "../services/DoctorService";
 import { useEffect } from "react";
 import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { getOneDoctor } from "../store/actions/doctorActions";
+import { getAllDoctors, getOneDoctor } from "../store/actions/doctorActions";
 import DoctorCardList from "../components/doctor/DoctorCardList";
+import DoctorCard from "../components/doctor/DoctorCard";
 
+export default function Doctor() {
+  const { doctors } = useSelector((state) => state.doctor);
+  const doctorDispatch = useDispatch();
 
-export default function Doctor({doctors}) {
+  useEffect(() => {
+    doctorDispatch(getAllDoctors());
+  }, []);
 
-
+  console.log(doctors)
   return (
     <div>
-      <DoctorCardList />
+    {/* <DoctorCard doctor={doctors[0]} /> */}
+    <DoctorCardList />
     </div>
-   
   );
 }

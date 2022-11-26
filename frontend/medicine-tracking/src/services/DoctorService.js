@@ -7,10 +7,11 @@ class DoctorService {
 
   async getOneDoctor(id) {
     const url = `${this.baseUrl}/${id}`;
-    return await axios
+    const { data } = await axios
       .get(url)
-      .then((resp) => resp.data)
+      .then((resp) => resp)
       .catch((err) => console.log(err));
+    return { data };
   }
 
   async getAllDoctors() {
@@ -39,4 +40,3 @@ class DoctorService {
   }
 }
 export default DoctorService;
-

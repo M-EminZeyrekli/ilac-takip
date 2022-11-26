@@ -11,6 +11,8 @@ import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -28,9 +30,13 @@ public class Patient {
     @Column(name = "patient_id")
     private int id;
 
+    @NotNull
+    @NotBlank
     @Column(name = "first_name")
     private String firstName;
 
+    @NotNull
+    @NotBlank
     @Column(name = "last_name")
     private String lastName;
 

@@ -6,10 +6,15 @@ import Typography from "@mui/material/Typography";
 import { Button, CardActionArea } from "@mui/material";
 import PatientSelect from "../PatientSelect";
 import { Box, Stack } from "@mui/system";
+import { Route, useNavigate } from "react-router-dom";
 
 export default function DoctorCard({ doctor }) {
+  // const navigate = useNavigate();
+  // const handleclick = () => {
+  //   navigate("/doctor/" + doctor.id);
+  // };
   return (
-    <Card sx={{ maxWidth: 200 }} >
+    <Card sx={{ maxWidth: 200 }}>
       <CardActionArea>
         <CardMedia
           component="img"
@@ -33,8 +38,8 @@ export default function DoctorCard({ doctor }) {
               <Button variant="outlined" color="primary">
                 Add Patient
               </Button>
-              <PatientSelect label={"Add Medicine "}/>
-              <PatientSelect label={"Medicine Tracking "}/>
+              <PatientSelect label={"Add Medicine "} />
+              <PatientSelect label={"Medicine Tracking "} />
             </Stack>
           </Box>
         </CardContent>

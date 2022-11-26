@@ -72,7 +72,11 @@ export default function AddPatient() {
             label="Gender"
             onChange={handleChange}
           ></TextField>
-
+          <TextField
+            name="doctorId"
+            label="Doctor"
+            onChange={handleChange}
+          ></TextField>
           <Button color="primary" onClick={handleClick} variant="contained">
             Add
           </Button>

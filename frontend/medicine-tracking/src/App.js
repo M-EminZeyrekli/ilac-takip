@@ -10,6 +10,8 @@ import Admin from "./adminpages/Admin";
 import { useState } from "react";
 import ListDoctor from "./adminpages/doctors/ListDoctor";
 import ListPatient from "./adminpages/patients/Listpatient";
+import DoctorCard from "./components/doctor/DoctorCard";
+import SingleDoctor from "./components/doctor/SingleDoctor";
 
 function App() {
   const [medicines, setmedicines] = useState([]);
@@ -42,7 +44,11 @@ function App() {
           <Route path="/admin" element={<Admin />} />
           <Route
             path="/doctor/"
-            element={<Doctor doctors={doctors}  />}
+            element={<Doctor doctors={doctors} setdoctors={setdoctors}  />}
+          />
+          <Route
+            path="/doctor/:id"
+            element={<SingleDoctor  />}
           />
           <Route path="/" element={<Home />} />
         </Routes>

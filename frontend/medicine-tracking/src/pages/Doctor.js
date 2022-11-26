@@ -12,6 +12,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { getAllDoctors, getOneDoctor } from "../store/actions/doctorActions";
 import DoctorCardList from "../components/doctor/DoctorCardList";
 import DoctorCard from "../components/doctor/DoctorCard";
+import SingleDoctor from "../components/doctor/SingleDoctor";
 
 export default function Doctor() {
   const { doctors } = useSelector((state) => state.doctor);

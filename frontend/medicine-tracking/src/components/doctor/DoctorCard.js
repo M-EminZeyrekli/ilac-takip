@@ -32,16 +32,6 @@ export default function DoctorCard({ doctor }) {
           <Typography variant="body2" color="text.secondary">
             {doctor.department}
           </Typography>
-
-          <Box padding={2}>
-            <Stack spacing={2}>
-              <Button variant="outlined" color="primary">
-                Add Patient
-              </Button>
-              <PatientSelect label={"Add Medicine "} />
-              <PatientSelect label={"Medicine Tracking "} />
-            </Stack>
-          </Box>
         </CardContent>
       </CardActionArea>
     </Card>

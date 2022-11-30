@@ -7,10 +7,12 @@ import Select from "@mui/material/Select";
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { getAllPatients } from "../store/actions/patientActions";
+import { useNavigate } from "react-router-dom";
 
 export default function PatientSelect({label}) {
   const { patients } = useSelector((state) => state.patient);
   const patientDispatch = useDispatch();
+  const navigate = useNavigate();
 
   useEffect(() => {
     patientDispatch(getAllPatients());
@@ -19,6 +21,9 @@ export default function PatientSelect({label}) {
 
   const handleChange = (event) => {
     
+  };
+  const handleClick = () => {
+    //navigate("/admin/medicines");
   };
 
   return (
@@ -33,7 +38,7 @@ export default function PatientSelect({label}) {
           onChange={handleChange}
         >
             {patients.map((patient)=>(
-                 <MenuItem  >{patient.firstName} {patient.lastName}</MenuItem>
+                 <MenuItem  onClick={handleClick()}>{patient.firstName} {patient.lastName}</MenuItem>
                
             ))}
          

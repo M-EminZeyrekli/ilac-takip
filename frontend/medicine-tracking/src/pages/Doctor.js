@@ -22,11 +22,12 @@ export default function Doctor() {
     doctorDispatch(getAllDoctors());
   }, []);
 
-  console.log(doctors)
+  console.log(doctors);
   return (
     <div>
-    {/* <DoctorCard doctor={doctors[0]} /> */}
-    <DoctorCardList />
+      <Typography alignSelf={"center"}>
+        <DoctorCardList />
+      </Typography>
     </div>
   );
 }

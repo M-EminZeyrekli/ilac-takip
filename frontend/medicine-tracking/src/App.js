@@ -12,6 +12,8 @@ import ListDoctor from "./adminpages/doctors/ListDoctor";
 import ListPatient from "./adminpages/patients/Listpatient";
 import DoctorCard from "./components/doctor/DoctorCard";
 import SingleDoctor from "./components/doctor/SingleDoctor";
+import Patient from "./pages/Patient";
+import SinglePatient from "./components/patient/SinglePatient";
 
 function App() {
   const [medicines, setmedicines] = useState([]);
@@ -44,12 +46,14 @@ function App() {
           <Route path="/admin" element={<Admin />} />
           <Route
             path="/doctor/"
-            element={<Doctor doctors={doctors} setdoctors={setdoctors}  />}
+            element={<Doctor doctors={doctors} setdoctors={setdoctors} />}
           />
           <Route
-            path="/doctor/:id"
-            element={<SingleDoctor  />}
+            path="/patient/"
+            element={<Patient patients={patients} setpatients={setpatients} />}
           />
+          <Route path="/doctor/:id" element={<SingleDoctor />} />
+          <Route path="/patient/:id" element={<SinglePatient />} />
           <Route path="/" element={<Home />} />
         </Routes>
       </BrowserRouter>

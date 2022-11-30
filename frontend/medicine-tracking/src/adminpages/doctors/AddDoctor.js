@@ -30,7 +30,7 @@ export default function AddDoctor() {
   };
 
   return (
-    <Container maxWidth="md">
+    <Container maxWidth="sm">
       <Box sx={{ m: 3 }}>
         <Stack spacing={3}>
           <TextField

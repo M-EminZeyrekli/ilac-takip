@@ -9,10 +9,6 @@ import { Box, Stack } from "@mui/system";
 import { Route, useNavigate } from "react-router-dom";
 
 export default function DoctorCard({ doctor }) {
-  // const navigate = useNavigate();
-  // const handleclick = () => {
-  //   navigate("/doctor/" + doctor.id);
-  // };
   return (
     <Card sx={{ maxWidth: 200 }}>
       <CardActionArea>

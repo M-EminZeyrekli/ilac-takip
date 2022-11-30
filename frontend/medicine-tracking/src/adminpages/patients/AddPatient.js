@@ -34,7 +34,7 @@ export default function AddPatient() {
   };
 
   return (
-    <Container maxWidth="md">
+    <Container maxWidth="sm">
       <Box sx={{ m: 3 }}>
         <Stack spacing={3}>
           <TextField
@@ -70,11 +70,6 @@ export default function AddPatient() {
           <TextField
             name="gender"
             label="Gender"
-            onChange={handleChange}
-          ></TextField>
-          <TextField
-            name="doctorId"
-            label="Doctor"
             onChange={handleChange}
           ></TextField>
           <Button color="primary" onClick={handleClick} variant="contained">

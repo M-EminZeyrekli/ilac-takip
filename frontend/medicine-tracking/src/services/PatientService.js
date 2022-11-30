@@ -7,10 +7,11 @@ class PatientService {
 
   async getOnePatient(id) {
     const url = `${this.baseUrl}/${id}`;
-    return await axios
-      .get(url)
-      .then((resp) => resp.data)
-      .catch((err) => console.log(err));
+    const { status, data } = await axios
+    .get(url)
+    .then((resp) => resp)
+    .catch((err) => console.log(err));
+    return { data };
   }
 
   async getAllPatients() {

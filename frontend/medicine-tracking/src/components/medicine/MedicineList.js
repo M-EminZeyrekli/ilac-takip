@@ -58,7 +58,7 @@ export default function MedicineList({ medicines }) {
           </TableBody>
         </Table>
       </TableContainer>
-      <Button>Update</Button>
+      <Button variant="contained">Update</Button>
     </div>
   );
 }

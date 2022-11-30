@@ -20,10 +20,10 @@ export default function SinglePatient() {
   console.log(patient);
 
   return (
-    <div>
-
+    <div >
+      <Typography mx={2}>
      <PatientCard patient={patient} />
-      
+     </Typography>
       <MedicineList medicines={patient.patientMedicines} />
       
     </div>

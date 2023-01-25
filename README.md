@@ -6,6 +6,6 @@ Sonarqube Raporu
 ![7](https://user-images.githubusercontent.com/79710410/212562887-275c4326-e7dd-4f1b-95d8-986169f1dc26.PNG)
 
 
-#TODO: 
+# TODO: 
 ilaçların kullanma aralığını tutmak için veritabanında işlem yapılacak.
 doktorun ilaç takip ekranı düzenlenecek
